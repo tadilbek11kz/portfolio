@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Adilbek Tursynbek | Web Developer</title>
+
+    <!-- External CSS and JavaScript libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="https://unpkg.com/@swup/head-plugin@2"></script>
+    <script src="https://unpkg.com/@swup/scripts-plugin@2"></script>
+
+
+    <!-- Custom CSS and JavaScript files -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="module" src="assets/js/background.js"></script>
+    <script defer src="assets/js/utils.js"></script>
+    <script data-swup-reload-script defer src="assets/js/projects.js"></script>
+</head>
+
+<body class="bg-[#222222] font-montserrat flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed xl:sticky h-full top-0 overflow-y-auto w-20 xl:w-80 transition-all duration-700 z-40">
+
+        <!-- Gradient line on the right side of the sidebar -->
+        <div class="absolute inset-y-0 right-0 w-1 bg-gradient-to-t from-purple-900 via-red-500 to-orange-500"></div>
+
+        <!-- Expanded sidebar for larger screens -->
+        <div id="expanded-sidebar" class="container hidden xl:flex bg-[#222222]/50 text-[#999999] font-medium p-2 xl:p-8 mx-auto flex-col justify-between h-screen">
+
+            <!-- Header section -->
+            <div class="flex flex-col justify-center">
+                <h1 class="text-2xl text-white font-bold">Adilbek Tursynbek</h1>
+                <p class="text-gray-400">Web Developer</p>
+            </div>
+
+            <!-- Navigation section -->
+            <div class="flex flex-row justify-between items-center">
+                <nav class="flex-col p-5 justify-center text-xl text-white">
+                    <ul class="flex flex-col gap-5">
+                        <li>
+                            <a data-sidebar href="/" class="relative hover:after:w-full">Home</a>
+                        </li>
+                        <li>
+                            <a data-sidebar href="/projects.html" class="active relative ml-3 text-3xl">
+                                Projects
+                                <span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-purple-900 via-red-500 to-orange-500"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-sidebar href="/about.html" class="relative hover:after:w-full">About</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Contact links -->
+            <div class="items-center">
+                <a href="mailto:adilbek.tursynbek@nyu.edu" class="">Email</a>
+                <a href="https://www.linkedin.com/in/adilbek-tursynbek/" class="ml-2">LinkedIn</a>
+                <a href="https://github.com/tadilbek11kz" class="ml-2">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Collapsed sidebar for smaller screens -->
+        <div id="colapsed-sidebar" class="container xl:hidden bg-[#222222]/50 text-[#999999] font-medium p-2 xl:p-8 mx-auto flex-col justify-between h-screen">
+            <div class="flex flex-col justify-center">
+                <h1 class="pt-8 text-center text-2xl text-white font-bold">AT</h1>
+            </div>
+        </div>
+        <!-- Sidebar toggle buttons -->
+        <div class="absolute h-16 top-1/2 right-5 xl:hidden -translate-y-1/2">
+
+            <!-- Open button -->
+            <button id="open" class="transition p-4">
+                <svg width="20" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#999" fill-rule="evenodd">
+                        <path d="M0 0h8v2H0zM0 4h20v2H0zM0 8h15v2H0z"></path>
+                    </g>
+                </svg>
+            </button>
+
+            <!-- Close button -->
+            <button id="close" class="hidden rounded-full p-4 duration-1000 bg-[#2F2F2F] hover:bg-[conic-gradient(#FF6B00,#4B0082)] hover:rotate-180 hover:scale-125">
+                <span>
+                    <svg width="16" height="16" viewBox="0 0 20 20.817" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#FFF" fill-rule="evenodd">
+                            <path d="m0 18.402 10.102-9.88 2.02 1.976-10.102 9.88z"></path>
+                            <path d="m2.02.628 10.101 9.88-2.02 1.976-10.1-9.88z"></path>
+                            <path d="m20 2.415-10.102 9.88-2.02-1.976L17.98.439z"></path>
+                            <path d="M17.98 20.19 7.879 10.308l2.02-1.976 10.1 9.88z"></path>
+                        </g>
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="swup" class="ml-20 xl:ml-0 flex-1 opacity-1 transition min-h-screen p-8">
+        <!-- Header -->
+        <div class="mb-16 md:mb-24">
+            <h1 class="text-[#ECEEF2] text-6xl font-bold mb-4">Projects</h1>
+            <p class="text-gray-400 text-xl">— Selected projects</p>
+        </div>
+
+        <!-- Projects -->
+        <div class="flex flex-row justify-center md:justify-end m-4 md:m-12">
+
+            <!-- Grid layout for project cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+
+                <!-- Project Card: Procrastination Project -->
+                <div class="relative md:even:-translate-y-1/2">
+                    <a id="project" class="h-full w-full left-0 top-0 absolute overflow-hidden z-10" href="https://tadilbek11kz.github.io/30MFF/"></a>
+                    <span class="relative text-[#ECEEF2] text-2xl">Procrastination</span>
+                    <div class="aspect-[4/3] max-w-md rounded-lg mt-4 overflow-hidden">
+                        <img src="/assets/images/project-1.png" alt="Portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Project Card: The Play Project -->
+                <div class="relative md:even:-translate-y-1/2">
+                    <a id="project" class="h-full w-full left-0 top-0 absolute overflow-hidden z-10" href="https://tadilbek11kz.github.io/audio-page/"></a>
+                    <span class="relative text-[#ECEEF2] text-2xl">The Play</span>
+                    <div class="aspect-[4/3] max-w-md rounded-lg mt-4 overflow-hidden">
+                        <img src="/assets/images/project-2.png" alt="Portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Project Card: Library Project (second column)-->
+                <div class="relative md:even:-translate-y-1/2">
+                    <a id="project" class="h-full w-full left-0 top-0 absolute overflow-hidden z-10" href="https://tadilbek11kz.github.io/video-page/"></a>
+                    <span class="relative text-[#ECEEF2] text-2xl">Library</span>
+                    <div class="aspect-[4/3] max-w-md rounded-lg mt-4 overflow-hidden">
+                        <img src="/assets/images/project-3.png" alt="Portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Project Card: Interactive Comic Project-->
+                <div class="relative md:even:-translate-y-1/2">
+                    <a id="project" class="h-full w-full left-0 top-0 absolute overflow-hidden z-10" href="https://tadilbek11kz.github.io/interactive-comic/"></a>
+                    <span class="relative text-[#ECEEF2] text-2xl">Interactive Comic</span>
+                    <div class="aspect-[4/3] max-w-md rounded-lg mt-4 overflow-hidden">
+                        <img src="/assets/images/project-4.png" alt="Portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Hidden background image for three.js -->
+    <img id="background-img" class="hidden" src="/assets/images/code.png" alt="">
+</body>
+
+</html>

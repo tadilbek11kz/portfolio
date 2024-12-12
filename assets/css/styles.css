@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap);
+
+html,
+body {
+    overscroll-behavior: none;
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+canvas {
+    position: fixed;
+    opacity: 0.35;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@keyframes text-animation-appear {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes text-animation-opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes line-animation-appear {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.text-animation-appear {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: text-animation-appear 2s linear forwards;
+}
+
+.text-animation-opacity {
+    animation: text-animation-opacity 1.5s linear forwards;
+}
+
+.line-animation-appear {
+    transition: width 0.7s;
+}
+
+li>a::after,
+span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    left: 0;
+    height: 1px;
+    bottom: -2px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+html.is-animating main {
+    opacity: 0;
+}
+
+#open svg path {
+    transition: all 1s;
+}
+
+#open:hover svg path {
+    fill: #fff;
+    d: path("M0 0h20v2H0zM0 4h20v2H0zM0 8h20v2H0z");
+    d: "M0 0h20v2H0zM0 4h20v2H0zM0 8h20v2H0z";
+    transition: all 1s;
+}
